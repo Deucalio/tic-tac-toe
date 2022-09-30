@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: black;
+        }
+    </style>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic Tac Toe</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body>
+
+
+    <p class="text-center text-4xl font-medium text-orange-600">&omicron; <span
+            class="text-5xl font-bold tracking-wider text-orange-600">Tic Tac Toe</span> &times;</p>
+    <p class="text-2xl font-normal tracking-wide text-orange-500 text-center mt-8">Select marker to start the game</p>
+    <div class="mx-auto mb-6 -mt-2 flex w-3/5 flex-row justify-around py-5 gap-2">
+        <button
+            class=" bg-slate-800 h-12  px-12 hover:border-2 hover:border-[#6D87C5] text-center text-3xl text-rose-300">O</button>
+        <button
+            class=" bg-slate-800 h-12 px-12 hover:border-2 hover:border-[#6D87C5] text-center text-3xl text-rose-300">X</button>
+    </div>
+    <div
+        class="mx-auto w-fit rounded-md border-4 border-[#503B31] bg-[#141414] font-mono text-6xl text-[#D1603D] md:w-2/4">
+        <div class="mx-auto mt-8 mb-4 grid w-fit grid-cols-3 justify-items-center border-teal-400 py-5">
+            <button class="h-24 w-24 border-r-4 border-b-4 border-[#A7BBEC]"></button>
+            <button class="h-24 w-24 border-r-4 border-b-4 border-[#A7BBEC]">O</button>
+            <button class="h-24 w-24 border-b-4 border-[#A7BBEC]">O</button>
+
+            <button class="h-24 w-24 border-r-4 border-b-4 border-[#A7BBEC]">O</button>
+            <button class="h-24 w-24 border-r-4 border-b-4 border-[#A7BBEC]">X</button>
+            <button class="h-24 w-24 border-b-4 border-[#A7BBEC]">X</button>
+
+            <button class="h-24 w-24 border-r-4 border-[#A7BBEC]">X</button>
+            <button class="h-24 w-24 border-r-4 border-[#A7BBEC]">X</button>
+            <button class="h-24 w-24">X</button>
+        </div>
+    </div>
+    <div
+        class="hover:border-4 hover:border-[#6D87C5] font-normal mt-2 w-fit mx-auto rounded-xl border-4 border-[#221D23] bg-[#221D23] px-4 pb-2 text-center text-4xl text-[#D1603D]">
+        Restart</div>
+
+
+
+</body>
+
+</html>
