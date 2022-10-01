@@ -38,17 +38,7 @@ markers.forEach(marker => marker.addEventListener("click", () => {
 
     // if user marker is X then computer takes the first turn
     if (User['marker'] === "X") {
-        let computerChoice = ComputerTurnGen()
-        cells[computerChoice].textContent = Computer.marker;
-
-        // for Computer (also disable the button where computer marks)
-        let [row, col] = cells[computerChoice].dataset.rowcol.split("");
-        cells[computerChoice].disabled = true;
-        // console.log("COMPUTER", row,col)
-        gameBoard[row - 1].splice(col - 1, 1, Computer.marker)
-
-
-
+        computerMove();
     }
 }))
 
@@ -60,36 +50,33 @@ cells.forEach(btn => btn.addEventListener("click", () => {
                 btn.textContent = User.marker;
                 let [row, col] = btn.dataset.rowcol.split("");
                 gameBoard[row - 1].splice(col - 1, 1, User.marker)
-                let computerChoice = ComputerTurnGen()
-                cells[computerChoice].textContent = Computer.marker;
 
-                // for Computer (also disable the button where computer marks)
-                [row, col] = cells[computerChoice].dataset.rowcol.split("");
-                cells[computerChoice].disabled = true;
-                // console.log("COMPUTER", row,col)
-                gameBoard[row - 1].splice(col - 1, 1, Computer.marker)
+
+                computerMove();
+
             }
         } else {
             btn.textContent = User.marker;
             let [row, col] = btn.dataset.rowcol.split("");
             gameBoard[row - 1].splice(col - 1, 1, User.marker)
 
-
-            let computerChoice = ComputerTurnGen()
-            cells[computerChoice].textContent = Computer.marker;
-
-            // for Computer (also disable the button where computer marks)
-            [row, col] = cells[computerChoice].dataset.rowcol.split("");
-            cells[computerChoice].disabled = true;
-            // console.log("COMPUTER", row,col)
-            gameBoard[row - 1].splice(col - 1, 1, Computer.marker)
-
+            computerMove();
         }
 
     }
 
 }))
 
+const computerMove = () => {
+    let computerChoice = ComputerTurnGen()
+    cells[computerChoice].textContent = Computer.marker;
+
+    // for Computer (also disable the button where computer marks)
+    [row, col] = cells[computerChoice].dataset.rowcol.split("");
+    cells[computerChoice].disabled = true;
+    // console.log("COMPUTER", row,col)
+    gameBoard[row - 1].splice(col - 1, 1, Computer.marker)
+}
 
 
 const ComputerTurnGen = () => {
