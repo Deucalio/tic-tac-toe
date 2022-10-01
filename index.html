@@ -12,6 +12,9 @@
         body {
             background-color: black;
         }
+        button.active{
+            border: 2px solid #6D87C5; 
+        }
     </style>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -28,32 +31,32 @@
     <p class="text-2xl font-normal tracking-wide text-orange-500 text-center mt-8">Select marker to start the game</p>
     <div class="mx-auto mb-6 -mt-2 flex w-3/5 flex-row justify-around py-5 gap-2">
         <button
-            class=" bg-slate-800 h-12  px-12 hover:border-2 hover:border-[#6D87C5] text-center text-3xl text-rose-300">O</button>
+            class="marker bg-slate-800 h-12  px-12 hover:border-2 hover:border-[#6D87C5] text-center text-3xl text-rose-300">O</button>
         <button
-            class=" bg-slate-800 h-12 px-12 hover:border-2 hover:border-[#6D87C5] text-center text-3xl text-rose-300">X</button>
+            class="marker bg-slate-800 h-12 px-12 hover:border-2 hover:border-[#6D87C5] text-center text-3xl text-rose-300">X</button>
     </div>
     <div
         class="mx-auto w-fit rounded-md border-4 border-[#503B31] bg-[#141414] font-mono text-6xl text-[#D1603D] md:w-2/4">
-        <div class="mx-auto mt-8 mb-4 grid w-fit grid-cols-3 justify-items-center border-teal-400 py-5">
-            <button class="h-24 w-24 border-r-4 border-b-4 border-[#A7BBEC]"></button>
-            <button class="h-24 w-24 border-r-4 border-b-4 border-[#A7BBEC]">O</button>
-            <button class="h-24 w-24 border-b-4 border-[#A7BBEC]">O</button>
+        <div class="mx-auto mt-8 mb-4 grid w-fit grid-cols-3 justify-items-center border-teal-400 py-5 card">
+            <button id="0" data-rowcol="11" class="h-24 w-24 border-r-4 border-b-4 border-[#A7BBEC]"></button>
+            <button id="1" data-rowcol="12" class="h-24 w-24 border-r-4 border-b-4 border-[#A7BBEC]"></button>
+            <button id="2" data-rowcol="13" class="h-24 w-24 border-b-4 border-[#A7BBEC]"></button>
 
-            <button class="h-24 w-24 border-r-4 border-b-4 border-[#A7BBEC]">O</button>
-            <button class="h-24 w-24 border-r-4 border-b-4 border-[#A7BBEC]">X</button>
-            <button class="h-24 w-24 border-b-4 border-[#A7BBEC]">X</button>
+            <button id="3" data-rowcol="21" class="h-24 w-24 border-r-4 border-b-4 border-[#A7BBEC]"></button>
+            <button id="4" data-rowcol="22" class="h-24 w-24 border-r-4 border-b-4 border-[#A7BBEC]"></button>
+            <button id="5" data-rowcol="23" class="h-24 w-24 border-b-4 border-[#A7BBEC]"></button>
 
-            <button class="h-24 w-24 border-r-4 border-[#A7BBEC]">X</button>
-            <button class="h-24 w-24 border-r-4 border-[#A7BBEC]">X</button>
-            <button class="h-24 w-24">X</button>
+            <button id="6" data-rowcol="31" class="h-24 w-24 border-r-4 border-[#A7BBEC]"></button>
+            <button id="7" data-rowcol="32" class="h-24 w-24 border-r-4 border-[#A7BBEC]"></button>
+            <button id="8" data-rowcol="33" class="h-24 w-24"></button>
         </div>
     </div>
     <div
-        class="hover:border-4 hover:border-[#6D87C5] font-normal mt-2 w-fit mx-auto rounded-xl border-4 border-[#221D23] bg-[#221D23] px-4 pb-2 text-center text-4xl text-[#D1603D]">
+        class="cursor-pointer hover:border-4 hover:border-[#6D87C5] font-normal mt-2 w-fit mx-auto rounded-xl border-4 border-[#221D23] bg-[#221D23] px-4 pb-2 text-center text-4xl text-[#D1603D]">
         Restart</div>
 
-
-
+    <script src="script.js"></script>
 </body>
+
 
 </html>
