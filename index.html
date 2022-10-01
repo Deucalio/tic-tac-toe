@@ -12,8 +12,35 @@
         body {
             background-color: black;
         }
-        button.active{
-            border: 2px solid #6D87C5; 
+
+        .marker.active {
+            border: 3px solid #6D87C5;
+        }
+
+        #overlay {
+            position: fixed;
+            opacity: 0;
+            background-color: rgb(0 0 0 / 0%);
+            top: 0;
+            right: 0;
+            backdrop-filter: blur(6px);
+            left: 0;
+            bottom: 0;
+            pointer-events: none;
+            transition: all 1000ms;
+        }
+
+        #overlay::before {
+            content: attr(data-content);
+            display: block;
+            width: 100%;
+            text-align: center;
+            opacity: 0.9;
+            color: #77d826;
+        }
+
+        #overlay.active {
+            opacity: 1;
         }
     </style>
     <meta charset="UTF-8">
@@ -30,10 +57,8 @@
             class="text-5xl font-bold tracking-wider text-orange-600">Tic Tac Toe</span> &times;</p>
     <p class="text-2xl font-normal tracking-wide text-orange-500 text-center mt-8">Select marker to start the game</p>
     <div class="mx-auto mb-6 -mt-2 flex w-3/5 flex-row justify-around py-5 gap-2">
-        <button
-            class="marker bg-slate-800 h-12  px-12 hover:border-2 hover:border-[#6D87C5] text-center text-3xl text-rose-300">O</button>
-        <button
-            class="marker bg-slate-800 h-12 px-12 hover:border-2 hover:border-[#6D87C5] text-center text-3xl text-rose-300">X</button>
+        <button class="marker bg-slate-800 h-12  px-12 text-center text-3xl text-rose-300">O</button>
+        <button class="marker bg-slate-800 h-12 px-12 text-center text-3xl text-rose-300">X</button>
     </div>
     <div
         class="mx-auto w-fit rounded-md border-4 border-[#503B31] bg-[#141414] font-mono text-6xl text-[#D1603D] md:w-2/4">
@@ -51,10 +76,15 @@
             <button id="8" data-rowcol="33" class="h-24 w-24"></button>
         </div>
     </div>
-    <div
+    <div id="restart"
         class="cursor-pointer hover:border-4 hover:border-[#6D87C5] font-normal mt-2 w-fit mx-auto rounded-xl border-4 border-[#221D23] bg-[#221D23] px-4 pb-2 text-center text-4xl text-[#D1603D]">
         Restart</div>
 
+    <div action="#" class="pop-up" id="modal">
+    </div>
+
+    <div id="overlay" data-content="eww" class="before:relative before:top-1/2  before:content-[''] before:text-5xl before:text-amber-400">
+    </div>
     <script src="script.js"></script>
 </body>
 
